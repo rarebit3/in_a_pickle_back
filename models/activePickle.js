@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const Pickle = new Schema(
   {
-    uesr: { type: String, required: true },
-    recipe: { type: String, required: true },
+    user_id: { type: Schema.Types.ObjectId, ref: 'user_id' },
+    recipe_id: { type: Schema.Types.ObjectId, ref: 'recipe_id' },
     startDate: { type: String, required: true },
     tooOld: { type: String, required: true },
     checkInterval: { type: String, required: true },
@@ -13,4 +13,4 @@ const Pickle = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("pickles", Pickles);
+module.exports = mongoose.model("pickles", Pickle);

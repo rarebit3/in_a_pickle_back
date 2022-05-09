@@ -5,7 +5,8 @@ const User = new Schema(
   {
     userName: { type: String, required: true },
     email: { type: String, required: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+    recipeCollection: [{ type: Schema.Types.ObjectId, ref: 'recipes' }]
   },
   { timestamps: true }
 );

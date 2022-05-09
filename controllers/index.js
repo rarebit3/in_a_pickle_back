@@ -1,5 +1,5 @@
-const recipe = require("../models/recipe");
-const activePickle = require("../models/activePickle");
+const Recipe = require("../models/recipe");
+const ActivePickle = require("../models/activePickle");
 const User = require("../models/user");
 
 const createUser = async (req, res) => {
