@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const Pickle = new Schema(
+const Project = new Schema(
   {
     user_id: { type: Schema.Types.ObjectId, ref: 'user_id' },
     recipe_id: { type: Schema.Types.ObjectId, ref: 'recipe_id' },
@@ -13,4 +13,4 @@ const Pickle = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("pickles", Pickle);
+module.exports = mongoose.model("projects", Project);
