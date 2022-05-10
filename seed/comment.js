@@ -1,5 +1,5 @@
 const db = require("../db");
-const Recipe = require("../models/cellar");
+const Comment = require("../models/comment");
 
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -7,35 +7,27 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 const main = async () => {
     let testUser = await User.find({name: 'Tbond'})
-    const recipes = [
+    let testRecipes = await Recipe.findMany()
+    const comments = [
 {
     user_id: testUser[0]._id,
-    name: 'Sauerkraut',
-    description: 'A very basic sauerkraut.',
-    recipe: 'cabbage, water, salt,',
-    typeOfPickle: 'fermented, 2',
-    likes: 0,
+    recipe_id: testRecipes[0]._id,
+    commentBody: 'Good simple Sauerkraut'
 },
 {
     user_id: testUser[0]._id,
-    name: 'Dill Half Sour',
-    description: 'Half sour cucumbers.',
-    recipe: 'cucumbers, black peppercorn, coriander, bay leaf, garlic, dill, hot pepper salt, water',
-    typeOfPickle: 'fermented, 3.5',
-    likes: 0,
+    recipe_id: testRecipes[1]._id,
+    commentBody: 'Crowd pleaser. Quick turnaround.'
 },
 {
     user_id: testUser[0]._id,
-    name: 'Spicy full sour',
-    description: 'Half sour cucumbers.',
-    recipe: 'cucumbers, black peppercorn, coriander, bay leaf, garlic, dill, lots if hot pepper, salt, water',
-    typeOfPickle: 'fermented, 5',
-    likes: 0,
+    recipe_id: testRecipes[2]._id,
+    commentBody: 'Salty and Sour and hot. Not good descriptors for a person; great descriptors for a pickle.'
 },
 ];
 
-await Recipe.insertMany(recipes);
-console.log("Created some pickle recipes!");
+await Comment.insertMany(comments);
+console.log("Created some pickle comments!");
 };
 const run = async () => {
 await main();
