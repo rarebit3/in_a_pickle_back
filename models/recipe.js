@@ -8,7 +8,10 @@ const Recipe = new Schema(
     description: { type: String, required: true },
     recipe: { type: String, required: true },
     typeOfPickle: { type: String, required: true },
-    comments: [{ type: Schema.Types.ObjectId, ref: 'comments' }],
+    comments: [{ 
+      type: Schema.Types.ObjectId, 
+      ref: 'comments',
+    }],
     likes: { type: Number, required: true }
   },
   { timestamps: true }

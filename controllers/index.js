@@ -28,7 +28,7 @@ const getRecipeById = async (req, res) => {
     const { id } = req.params;
     const recipe = await Recipe.findById(id);
     if (recipe) {
-      return res.status(200).json({ spirit });
+      return res.status(200).json({ recipe });
     }
     return res.status(404).send("Recipe with the specified ID does not exists");
   } catch (error) {

@@ -6,7 +6,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 
 const main = async () => {
-    let testUser = await User.find({name: 'Tbond'})
+    // let testUser = await User.find({name: 'Tbond'})
     let testRecipes = await Recipe.find()
     const comments = [
 {
