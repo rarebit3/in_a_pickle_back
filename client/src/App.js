@@ -1,8 +1,8 @@
-import './App.css';
+import './style/App.css';
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 import Landing from "./components/Landing"
-import NavBar from "./components/NavBar/NavBar.js";
+import NavBar from "./components/NavBar/NavBar.jsx";
 
 
 function App() {
