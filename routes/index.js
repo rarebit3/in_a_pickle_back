@@ -10,6 +10,10 @@ router.get("/recipes", controllers.getAllRecipes)
 
 router.get("/recipe/:id", controllers.getRecipeById)
 
+router.post("/updaterecipe/:id", controllers.updateRecipe)
+
+router.delete("/removerecipe/:id", controllers.removeRecipe)
+
 router.post("/newproject", controllers.createProject)
 
 router.get("/projects",controllers.getAllProjects)

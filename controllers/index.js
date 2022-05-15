@@ -2,6 +2,10 @@ const Recipe = require("../models/recipe");
 const Project = require("../models/project");
 const User = require("../models/user");
 
+//to be added
+// const Comment = require("../models/comment")
+// const Likes = require("../models/like")
+
 const createUser = async (req, res) => {
   try {
     const user = await new User(req.body);
@@ -35,6 +39,27 @@ const getRecipeById = async (req, res) => {
     return res.status(500).send(error.message);
   }
 }
+
+const removeRecipe = async (req, res) => {
+  try {
+    res.status(200).json(await Recipe.findByIdAndDelete(req.params.id));
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+const updateRecipe = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const recipe = await Recipe.findByIdAndUpdate(req.body._id, req.body);
+    recipe.save();
+    return res.status(201).json({
+      user,
+    });
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
 
 const getAllProjects = async (req, res) => {
     try {
@@ -94,11 +119,16 @@ const updateUser = async (req, res) => {
 
 module.exports = {
     createUser,
+    updateUser,
+
     getAllRecipes,
     getRecipeById,
+    removeRecipe,
+    updateRecipe,
+
     createProject,
     getAllProjects,
     getProjectById,
     removeProject,
-    updateUser,
+ 
 }
