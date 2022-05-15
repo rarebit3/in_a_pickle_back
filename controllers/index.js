@@ -130,5 +130,4 @@ module.exports = {
     getAllProjects,
     getProjectById,
     removeProject,
- 
 }
