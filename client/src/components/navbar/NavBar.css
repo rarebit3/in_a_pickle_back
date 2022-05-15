@@ -11,17 +11,17 @@
   font-size: 1.2rem;
 }
 
-.pickle-icon {
+.pickle-logo {
   color: whitesmoke;
   justify-content: start;
   margin-left: 20px;
   cursor: pointer;
 }
 
-.fa-solid fa-cucumber {
+/* .fa-solid fa-cucumber {
   margin-left: 0.5rem;
   font-size: 1.6rem;
-}
+} */
 
 .nav-menu {
   display: grid;
@@ -57,7 +57,7 @@
   background-color: rgba(99,55,33,1);
   border-radius: 4px;
   transition: all 0.2s ease-out;
-  background: rgba(8, 58, 57, 1);
+  background: rgba(99,55,33,1);
   color: whitesmoke;
 }
 
@@ -146,7 +146,7 @@
   }
 
   .login:hover {
-    background: rgba(8, 58, 57, 1);
+    background: rgba(99,55,33,1);
     color: whitesmoke;
   }
 

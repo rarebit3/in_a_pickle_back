@@ -3,7 +3,7 @@ import React from "react"
 import { Route, Routes } from "react-router-dom"
 import Landing from "./components/Landing"
 import NavBar from "./components/NavBar/NavBar.jsx";
-
+import Recipes from "./components/Recipes.jsx"
 
 function App() {
   return (
@@ -12,8 +12,8 @@ function App() {
       <main>
       <Routes>
           <Route path="/" element={<Landing />} />
-          {/* <Route path="/" element={< />} />
-          <Route path="/" element={< />} /> */}
+          {/* {/* <Route path="/" element={< />} /> */}
+          <Route path="/recipes" element={<Recipes />} />
         </Routes>
       </main>
     </div>

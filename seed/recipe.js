@@ -13,25 +13,22 @@ const main = async () => {
     user_id: testUser[0]._id,
     name: 'Sauerkraut',
     description: 'A very basic sauerkraut.',
-    recipe: 'cabbage, water, salt,',
-    typeOfPickle: 'fermented, 2',
-    likes: 0,
+    ingredientList: 'cabbage, water, salt,',
+    brineStrength: '2'
 },
 {
     user_id: testUser[0]._id,
     name: 'Dill Half Sour',
     description: 'Half sour cucumbers.',
-    recipe: 'cucumbers, black peppercorn, coriander, bay leaf, garlic, dill, hot pepper salt, water',
-    typeOfPickle: 'fermented, 3.5',
-    likes: 0,
+    ingredientList: 'cucumbers, black peppercorn, coriander, bay leaf, garlic, dill, hot pepper salt, water',
+    brineStrength: '3.5',
 },
 {
     user_id: testUser[0]._id,
     name: 'Spicy full sour',
     description: 'Half sour cucumbers.',
-    recipe: 'cucumbers, black peppercorn, coriander, bay leaf, garlic, dill, lots if hot pepper, salt, water',
-    typeOfPickle: 'fermented, 5',
-    likes: 0,
+    ingredientList: 'cucumbers, black peppercorn, coriander, bay leaf, garlic, dill, lots if hot pepper, salt, water',
+    brineStrength: '5',
 },
 ];
 

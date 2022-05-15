@@ -9,8 +9,8 @@ const NavBar = () => {
 
   return (
     <nav className="NavBar">
-      <h1 className="pickle-icon" onClick={() => navigate("/")}>
-        In-A-Pickle<i className="fa-solid fa-cucumber"></i>
+      <h1 className="pickle-logo" onClick={() => navigate("/")}>
+        In-A-Pickle
       </h1>
       <div
         className="menu-icon"
