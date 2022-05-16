@@ -35,6 +35,7 @@ const Recipes = () => {
   } else {
     return (
       <div className="recipe-grid">
+        <Link classname="addRecipe" to="/newrecipe">Add a Recipe</Link>
         {recipes.map((recipe, id) => (
           <div className="recipe-card" key={id}>
             <h2>{recipe.name}</h2>

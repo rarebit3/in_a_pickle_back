@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 
 const NewRecipe = () => {
+    let navigate = useNavigate()
+
     const [newRecipe, setNewRecipe] = useState({
         name: "",
         description: "",
@@ -18,7 +21,9 @@ const NewRecipe = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await axios.post('/data/newrecipe', newRecipe)
+        await axios.post('http://localhost:3001/data/newrecipe', newRecipe)
+        navigate('/recipes')
+        
     } 
 
     return (
