@@ -39,6 +39,11 @@ const NewProject = () => {
     }
 
     //perform your PICKLEMATH here
+    //brineStrength to number, /100
+    //user input => get a produce weight
+    //based on produce weight suggest a water volume
+    //convert water volume to weight
+    //based on water weight plus produce weight, calculate salt weight
 
     return (
         <div>

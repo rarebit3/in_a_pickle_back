@@ -32,6 +32,8 @@
 - [] Project creation with math to help with weights of water produce and salt
 - [] Styling
 - [] User auth
+- [] Terms glossary
+- [] troubleshooting glossary
 - [] Comments and Likes
 ***
 ### ***Credits***
