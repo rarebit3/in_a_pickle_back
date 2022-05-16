@@ -40,6 +40,19 @@ const getRecipeById = async (req, res) => {
   }
 }
 
+const createRecipe = async (req, res) => { 
+  try {
+    const recipe = await new Recipe(req.body)
+    await recipe.save();
+
+    return res.status(201).json({
+      recipe,
+    });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+}
+
 const removeRecipe = async (req, res) => {
   try {
     res.status(200).json(await Recipe.findByIdAndDelete(req.params.id));
@@ -123,6 +136,7 @@ module.exports = {
 
     getAllRecipes,
     getRecipeById,
+    createRecipe,
     removeRecipe,
     updateRecipe,
 
