@@ -12,7 +12,7 @@ const Projects = () => {
 
     //function that makes an axios call to set the state
     const getProjects = async () => {
-        const projectList = await axios.get("/projects")
+        const projectList = await axios.get("http://localhost:3001/data/projects")
         setProjects(projectList.data.projects)
     }
 

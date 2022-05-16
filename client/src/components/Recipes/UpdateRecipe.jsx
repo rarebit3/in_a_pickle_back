@@ -44,7 +44,7 @@ const UpdateRecipe = () => {
     );
     navigate("/recipes");
   };
-console.log(recipe)
+
   if (!recipe) {
     return <h1>Loading your recipe</h1>;
   } else {
