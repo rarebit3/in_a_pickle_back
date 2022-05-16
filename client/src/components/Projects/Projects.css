@@ -59,6 +59,7 @@
     margin: 1em;
     padding: 1em;
     cursor: pointer;
+    display: flex;
   }
 
   .addRecipe:hover {
