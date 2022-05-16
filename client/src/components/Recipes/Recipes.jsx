@@ -40,8 +40,8 @@ const Recipes = () => {
             <h2>{recipe.name}</h2>
             <div>
               <h3>Brine Strength: {recipe.brineStrength}%</h3>
-              <p>{recipe.ingredientList}</p>
-              <p>{recipe.description}</p>
+              <p>Ingredients: {recipe.ingredientList}</p>
+              <p>Description: {recipe.description}</p>
             </div>
             <button
               className="remove-button in-box-button"
