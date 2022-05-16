@@ -31,29 +31,29 @@ const NewRecipe = () => {
                 type="text"
                 value={newRecipe.name}
                 onChange={formUpdate}
-                name={""}
-                placeholder={""}
+                name={"name"}
+                placeholder={"Recipe Name"}
                 />
                  <input 
                 type="text"
                 value={newRecipe.description}
                 onChange={formUpdate}
-                name={""}
-                placeholder={""}
+                name={"description"}
+                placeholder={"Recipe Description"}
                 />
                 <input 
                 type="text"
                 value={newRecipe.ingredientList}
                 onChange={formUpdate}
-                name={""}
-                placeholder={""}
+                name={"ingredientList"}
+                placeholder={"Ingredient List"}
                 />
                 <input 
                 type="text"
                 value={newRecipe.brineStrength}
                 onChange={formUpdate}
-                name={""}
-                placeholder={""}
+                name={"brineStrength"}
+                placeholder={"Brine Strength"}
                 />
                 <button className="btn">Submit</button>
             </form>

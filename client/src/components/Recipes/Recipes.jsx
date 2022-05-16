@@ -24,6 +24,11 @@ const Recipes = () => {
 
     //Your on-clicks and other event listeners will go here
 
+    const removeRecipe = async (recipe) => {
+        await axios.delete(`/removerecipe/${recipe._id}`);
+        getRecipes();
+      };
+
     if (!recipes) {
         return <h1>Loading your recipes</h1>
     } else {
@@ -37,6 +42,18 @@ const Recipes = () => {
                             <p>{recipe.recipe}</p>
                             <p>{recipe.description}</p>
                         </div>
+                        <button
+              className="remove-button in-box-button"
+              label="Remove Recipe"
+              onClick={() => {
+                if (
+                  window.confirm("Are you sure you wish to delete this item?")
+                )
+                  removeRecipe(recipe);
+              }}
+            >
+              Remove Recipe
+            </button>
                     </div>
                 ))}
             </div>
