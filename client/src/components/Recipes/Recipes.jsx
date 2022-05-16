@@ -30,12 +30,13 @@ const Recipes = () => {
     getRecipes();
   };
 
+
   if (!recipes) {
     return <h1>Loading your recipes</h1>;
   } else {
     return (
       <div className="recipe-grid">
-        <Link classname="addRecipe" to="/newrecipe">Add a Recipe</Link>
+        <Link className="addRecipe" to="/newrecipe">Add a Recipe</Link>
         {recipes.map((recipe, id) => (
           <div className="recipe-card" key={id}>
             <h2>{recipe.name}</h2>
@@ -60,7 +61,7 @@ const Recipes = () => {
               className="update-button in-box-button"
               label="Update Recipe"
               onClick={() => {
-                  navigate(``);
+                  navigate(`/updaterecipe/${id}`);
               }}
             >
               Update Recipe

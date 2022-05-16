@@ -28,7 +28,7 @@ const NewRecipe = () => {
 
     return (
         <div className='form-box'>
-            <h1 classname='form-title'>
+            <h1 className='form-title'>
                 Add a new recipe.
             </h1>
             <form className="from" onSubmit={handleSubmit}>
