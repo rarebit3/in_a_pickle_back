@@ -38,29 +38,29 @@ const UpdateRecipe = () => {
                 type="text"
                 value={formValues.name}
                 onChange={formUpdate}
-                name={""}
-                placeholder={""}
+                name={"name"}
+                placeholder={"Recipe Name"}
                 />
                  <input 
                 type="text"
                 value={formValues.description}
                 onChange={formUpdate}
-                name={""}
-                placeholder={""}
+                name={"description"}
+                placeholder={"Description"}
                 />
                 <input 
                 type="text"
                 value={formValues.ingredientList}
                 onChange={formUpdate}
-                name={""}
-                placeholder={""}
+                name={"ingredientList"}
+                placeholder={"Ingredient List"}
                 />
                 <input 
                 type="text"
                 value={formValues.brineStrength}
                 onChange={formUpdate}
-                name={""}
-                placeholder={""}
+                name={"brineStrength"}
+                placeholder={"Brine Strength"}
                 />
                 <button className="btn">Submit</button>
             </form>

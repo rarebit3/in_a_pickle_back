@@ -1,48 +1,49 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useParams, } from "react-router-dom";
 import axios from "axios";
 // import "./Recipe.css";
 
-
 const Recipes = () => {
-    let navigate = useNavigate()
+  let navigate = useNavigate();
 
-    //define the states
-    const [recipes, setRecipes] = useState([])
+  let { id } = useParams();
 
-    //function that makes an axios call to set the state
-    const getRecipes = async () => {
-        const recipeList = await axios.get("http://localhost:3001/data/recipes")
-        setRecipes(recipeList.data.recipes)
-    }
+  //define the states
+  const [recipes, setRecipes] = useState([]);
 
-    //make the axios call on pageload
-    useEffect(() => {
-        getRecipes()
-    }, [])
+  //function that makes an axios call to set the state
+  const getRecipes = async () => {
+    const recipeList = await axios.get("http://localhost:3001/data/recipes");
+    setRecipes(recipeList.data.recipes);
+  };
 
-    //Your on-clicks and other event listeners will go here
+  //make the axios call on pageload
+  useEffect(() => {
+    getRecipes();
+  }, []);
 
-    const removeRecipe = async (recipe) => {
-        await axios.delete(`/removerecipe/${recipe._id}`);
-        getRecipes();
-      };
+  //Your on-clicks and other event listeners will go here
 
-    if (!recipes) {
-        return <h1>Loading your recipes</h1>
-    } else {
-        return (
-            <div className="recipe-grid">
-                {recipes.map((recipe, id) => (
-                    <div className="recipe-card" key={id}>
-                        <h2>{recipe.name}</h2>
-                        <div>
-                            <h3>Type of Pickle: {recipe.typeOfPickle}</h3>
-                            <p>{recipe.recipe}</p>
-                            <p>{recipe.description}</p>
-                        </div>
-                        <button
+  const removeRecipe = async (recipe) => {
+    await axios.delete(`http://localhost:3001/data/removerecipe/${recipe._id}`);
+    getRecipes();
+  };
+
+  if (!recipes) {
+    return <h1>Loading your recipes</h1>;
+  } else {
+    return (
+      <div className="recipe-grid">
+        {recipes.map((recipe, id) => (
+          <div className="recipe-card" key={id}>
+            <h2>{recipe.name}</h2>
+            <div>
+              <h3>Brine Strength: {recipe.brineStrength}%</h3>
+              <p>{recipe.ingredientList}</p>
+              <p>{recipe.description}</p>
+            </div>
+            <button
               className="remove-button in-box-button"
               label="Remove Recipe"
               onClick={() => {
@@ -54,13 +55,20 @@ const Recipes = () => {
             >
               Remove Recipe
             </button>
-                    </div>
-                ))}
-            </div>
-        )
-    
-    }
+            <button
+              className="update-button in-box-button"
+              label="Update Recipe"
+              onClick={() => {
+                  navigate(``);
+              }}
+            >
+              Update Recipe
+            </button>
+          </div>
+        ))}
+      </div>
+    );
+  }
+};
 
-}
-
-export default Recipes
+export default Recipes;
