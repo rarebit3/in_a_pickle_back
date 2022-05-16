@@ -12,7 +12,7 @@ router.get("/recipe/:id", controllers.getRecipeById)
 
 router.post("/newrecipe", controllers.createRecipe)
 
-router.post("/updaterecipe/:id", controllers.updateRecipe)
+router.put("/updaterecipe/:id", controllers.updateRecipe)
 
 router.delete("/removerecipe/:id", controllers.removeRecipe)
 

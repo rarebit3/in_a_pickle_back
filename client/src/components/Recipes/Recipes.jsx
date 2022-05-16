@@ -7,8 +7,6 @@ import axios from "axios";
 const Recipes = () => {
   let navigate = useNavigate();
 
-  let { id } = useParams();
-
   //define the states
   const [recipes, setRecipes] = useState([]);
 
@@ -61,7 +59,7 @@ const Recipes = () => {
               className="update-button in-box-button"
               label="Update Recipe"
               onClick={() => {
-                  navigate(`/updaterecipe/${id}`);
+                  navigate(`/updaterecipe/${recipe._id}`);
               }}
             >
               Update Recipe

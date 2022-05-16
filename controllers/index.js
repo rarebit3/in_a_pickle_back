@@ -64,10 +64,10 @@ const removeRecipe = async (req, res) => {
 const updateRecipe = async (req, res) => {
   try {
     const { id } = req.params;
-    const recipe = await Recipe.findByIdAndUpdate(req.body._id, req.body);
+    const recipe = await Recipe.findByIdAndUpdate(id, req.body);
     recipe.save();
     return res.status(201).json({
-      user,
+      recipe,
     });
   } catch (error) {
     return res.status(500).send(error.message);

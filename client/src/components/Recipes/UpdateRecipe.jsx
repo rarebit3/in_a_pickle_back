@@ -7,6 +7,12 @@ const UpdateRecipe = () => {
 
   const { id } = useParams();
 
+
+  // console.log(useParams())
+  const [recipe, setRecipe] = useState();
+
+  // console.log(id)
+
   const [formValues, setFormValues] = useState({
     name: "",
     description: "",
@@ -14,13 +20,13 @@ const UpdateRecipe = () => {
     brineRatio: "",
   });
 
-  const getRecipeById = async (id) => {
+  const getRecipeById = async () => {
     let data = await axios.get(`http://localhost:3001/data/recipe/${id}`);
-    setFormValues(data);
+    setRecipe(data.data.recipe);
   };
 
   useEffect(() => {
-    getRecipeById(id);
+    getRecipeById();
   }, []);
 
   const formUpdate = (e) => {
@@ -32,47 +38,47 @@ const UpdateRecipe = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(
-      `http://localhost:3001/data/updaterecipe/${e._id}`,
+    await axios.put(
+      `http://localhost:3001/data/updaterecipe/${id}`,
       formValues
     );
     navigate("/recipes");
   };
-
-  if (!formValues) {
+console.log(recipe)
+  if (!recipe) {
     return <h1>Loading your recipe</h1>;
   } else {
     return (
       <div className="form-box">
-        <h1 className="form-title">Update {formValues.name}:</h1>
-        <form className="from" onSubmit={handleSubmit}>
+        <h1 className="form-title">Update {recipe.name}:</h1>
+        <form className="form" onSubmit={handleSubmit}>
           <input
             type="text"
             value={formValues.name}
             onChange={formUpdate}
             name={"name"}
-            placeholder={"Recipe Name"}
+            placeholder={`${recipe.name}`}
           />
           <input
             type="field"
             value={formValues.description}
             onChange={formUpdate}
             name={"description"}
-            placeholder={"Description"}
+            placeholder={`${recipe.description}`}
           />
           <input
             type="field"
             value={formValues.ingredientList}
             onChange={formUpdate}
             name={"ingredientList"}
-            placeholder={"Ingredient List"}
+            placeholder={`${recipe.ingredientList}`}
           />
           <input
             type="text"
             value={formValues.brineStrength}
             onChange={formUpdate}
             name={"brineStrength"}
-            placeholder={"Brine Strength"}
+            placeholder={`${recipe.brineStrength}`}
           />
           <button className="btn">Submit</button>
         </form>
